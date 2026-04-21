@@ -1,0 +1,10 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Orquestração IntegraLife Rubia / XMOV
+    // Liberação Global para Desenvolvimento e Estabilidade de MVP
+    match /{document=**} {
+      allow read, write: if true;
+    }
+  }
+}

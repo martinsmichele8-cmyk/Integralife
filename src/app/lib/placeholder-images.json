@@ -1,0 +1,29 @@
+
+{
+  "placeholderImages": [
+    {
+      "id": "xmov-assistant",
+      "description": "XMOV Digital Assistant - Professional female with curly hair in a purple jacket",
+      "imageUrl": "https://picsum.photos/seed/xmov-ai/800/450",
+      "imageHint": "digital assistant"
+    },
+    {
+      "id": "hero-dashboard",
+      "description": "Healthcare analytics dashboard illustration",
+      "imageUrl": "https://picsum.photos/seed/medismart-1/1200/600",
+      "imageHint": "healthcare data"
+    },
+    {
+      "id": "team-collaboration",
+      "description": "Professional team discussing health plans",
+      "imageUrl": "https://picsum.photos/seed/medismart-2/800/400",
+      "imageHint": "business meeting"
+    },
+    {
+      "id": "corporate-meeting",
+      "description": "Modern corporate meeting room background",
+      "imageUrl": "https://picsum.photos/seed/corp-meet/1200/800",
+      "imageHint": "modern office"
+    }
+  ]
+}

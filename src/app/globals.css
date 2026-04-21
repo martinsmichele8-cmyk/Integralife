@@ -1,0 +1,84 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* IntegraLife Corporate - Paleta de Alta Visualização */
+    --background: 210 20% 96%; /* Cinza ultra claro para fundo */
+    --foreground: 222 47% 11%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    
+    /* Azul Profissional (Navy) */
+    --primary: 222 47% 11%;
+    --primary-foreground: 210 40% 98%;
+    
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222 47% 11.2%;
+    
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    
+    /* Verde Água (Accent) */
+    --accent: 174 100% 41%;
+    --accent-foreground: 222 47% 11%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    
+    /* Semáforo Operacional */
+    --success: 142 76% 36%;
+    --warning: 38 92% 50%;
+    --danger: 0 84% 60%;
+    
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222 47% 11%;
+    
+    --radius: 0.75rem;
+
+    /* Sidebar slate-800 (#1e293b) */
+    --sidebar-background: 215 25% 17%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 174 100% 41%;
+    --sidebar-primary-foreground: 222 47% 11%;
+    --sidebar-accent: 215 25% 25%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 215 25% 22%;
+    --sidebar-ring: 174 100% 41%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+}
+
+.bg-success { background-color: hsl(var(--success)); }
+.bg-warning { background-color: hsl(var(--warning)); }
+.bg-danger { background-color: hsl(var(--danger)); }
+
+/* Melhoria de legibilidade de tabelas */
+tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/10 rounded-full hover:bg-primary/20 transition-colors;
+}

@@ -1,0 +1,61 @@
+
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Represents an individual user profile.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "firstName": { "type": "string" },
+        "lastName": { "type": "string" },
+        "email": { "type": "string" },
+        "role": { "type": "string", "enum": ["Admin", "Manager", "Employee", "Broker", "Operation", "Faturamento"] },
+        "department": { "type": "string" },
+        "jobTitle": { "type": "string" },
+        "economicGroupId": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "email", "role", "department"]
+    },
+    "TeamTask": {
+      "title": "TeamTask",
+      "description": "Task for Kanban team management.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "status": { "type": "string", "enum": ["Disponível", "Férias", "Atestado", "Atraso"] },
+        "userId": { "type": "string" },
+        "department": { "type": "string" },
+        "dueDate": { "type": "string", "format": "date-time" }
+      }
+    },
+    "BillingTransaction": {
+      "title": "BillingTransaction",
+      "description": "Automated billing records.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "contractId": { "type": "string" },
+        "amount": { "type": "number" },
+        "status": { "type": "string", "enum": ["Pending", "Paid", "Failed"] },
+        "validatedByRobot": { "type": "boolean" },
+        "timestamp": { "type": "string", "format": "date-time" }
+      }
+    }
+  },
+  "auth": {
+    "providers": ["password"]
+  },
+  "firestore": {
+    "structure": [
+      { "path": "/user_profiles/{userId}", "definition": { "entityName": "UserProfile", "description": "User account data." } },
+      { "path": "/messages/{messageId}", "definition": { "entityName": "ChatMessage", "description": "Sectorial messages." } },
+      { "path": "/billing/{id}", "definition": { "entityName": "BillingTransaction", "description": "Automated billing data." } },
+      { "path": "/team_tasks/{id}", "definition": { "entityName": "TeamTask", "description": "Kanban tasks." } },
+      { "path": "/notifications/{id}", "definition": { "description": "In-app notifications." } }
+    ]
+  }
+}
